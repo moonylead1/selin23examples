@@ -46,8 +46,6 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-
-
 std::string RandomString(int ch)
 {
     char alpha[ch_MAX] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',

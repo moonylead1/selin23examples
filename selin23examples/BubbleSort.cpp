@@ -1,12 +1,14 @@
-#include <iostream>
-#include <cstdlib> // rand()
-#include <ctime>   // time() to prevent same seeds
+#include <bits/stdc++.h> // compiled all library in /bits
+#include <conio.h> // for getch
+#include <stdio.h> // for ...
 
+
+#define ld long double
 using namespace std;
 
 struct SortStats { //class to save values of comps and ctrc
-    int comparisons;
-    int copies;
+    ld comparisons;
+    ld copies;
 };
 
 void arrayOutput(int[], int);
@@ -14,7 +16,7 @@ void bubbleSort(int[], int, SortStats&);
 
 int main(int argc, char const *argv[])
 {
-    const int arraySize = 1000; // size of array
+    const int arraySize = 10000; // size of array
     int bestCase[arraySize];
     int averageCase[arraySize];
     int worstCase[arraySize];
@@ -45,24 +47,26 @@ int main(int argc, char const *argv[])
     bubbleSort(bestCase, arraySize, bestStats);
     arrayOutput(bestCase, arraySize); //as a func
     cout << endl;
-    cout << "Comparisons for best case: " << bestStats.comparisons << endl;
-    cout << "Copies for best case: " << bestStats.copies << endl;
-
+    cout << fixed << setprecision(0) <<  "Comparisons for best case: " << bestStats.comparisons << endl;
+    cout << fixed << setprecision(0) <<  "Copies for best case: " << bestStats.copies << endl;
+    getch();
     // Average Case
     bubbleSort(averageCase, arraySize, averageStats);
     arrayOutput(averageCase, arraySize);
-    cout << "Comparisons for average case: " << averageStats.comparisons << endl;
-    cout << "Copies for average case: " << averageStats.copies << endl;
-
+    cout << endl;
+    cout << fixed << setprecision(0) <<  "Comparisons for average case: " << averageStats.comparisons << endl;
+    cout << fixed << setprecision(0) <<  "Copies for average case: " << averageStats.copies << endl;
+    getch();
     // Worst Case
     bubbleSort(worstCase, arraySize, worstStats);
     arrayOutput(worstCase, arraySize);
-    cout << "Comparisons for worst case: " << worstStats.comparisons << endl;
-    cout << "Copies for worst case: " << worstStats.copies << endl;
-
+    cout << endl;
+    cout << fixed << setprecision(0) <<  "Comparisons for worst case: " << worstStats.comparisons << endl;
+    cout << fixed << setprecision(0) <<  "Copies for worst case: " << worstStats.copies << endl;
+    getch();
     return 0;
 }
-
+// sorting pairs hehe
 void bubbleSort(int array[], int arraySize, SortStats &stats)
 {
     stats.comparisons = 1; // update to 0

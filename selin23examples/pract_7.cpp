@@ -38,3 +38,6 @@ ld trapezoidSolveIntegral(ld a, ld b, ld n, ld (*func)(ld)) {
 
     return S;
 }
+
+//head to link to have an algo
+//https://www.mathros.net.ua/obchyslennja-vyznachenyh-integraliv-metodom-trapecij.html
